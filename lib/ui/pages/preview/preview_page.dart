@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_delivery/ui/pages/auth/auth_page.dart';
 
 class PreviewPage extends StatelessWidget {
   const PreviewPage({super.key});
@@ -7,9 +8,9 @@ class PreviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF354854),
       body: SafeArea(
         child: Container(
-          color: const Color(0xFF354854),
           width: double.infinity,
           child: Column(
             children: [
@@ -20,7 +21,7 @@ class PreviewPage extends StatelessWidget {
                 height: 180,
                 fit: BoxFit.cover,
               ),
-              const SizedBox(height: 70),
+              const SizedBox(height: 90),
               const Expanded(
                 child: Text(
                   'Food for Everyone',
@@ -33,7 +34,13 @@ class PreviewPage extends StatelessWidget {
               ),
               const Spacer(),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const AuthPage(),
+                    ),
+                  );
+                },
                 child: Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(20),
