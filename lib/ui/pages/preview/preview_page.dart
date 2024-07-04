@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:food_delivery/ui/pages/auth/auth_page.dart';
+import 'package:food_delivery/ui/pages/auth/login_page.dart';
 
 class PreviewPage extends StatelessWidget {
   const PreviewPage({super.key});
@@ -10,16 +10,20 @@ class PreviewPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFF354854),
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           child: Column(
             children: [
               const SizedBox(height: 70),
               SvgPicture.asset(
-                'assets/img/logo.svg',
+                'assets/img/logo_car.svg',
                 width: 200,
-                height: 180,
+                height: 200,
                 fit: BoxFit.cover,
+                colorFilter: const ColorFilter.mode(
+                  Color(0xFFFFAA15),
+                  BlendMode.srcIn,
+                ),
               ),
               const SizedBox(height: 90),
               const Expanded(
@@ -37,7 +41,7 @@ class PreviewPage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const AuthPage(),
+                      builder: (context) => const LoginPage(),
                     ),
                   );
                 },
@@ -47,14 +51,14 @@ class PreviewPage extends StatelessWidget {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: const Color(0xFFFFAA15),
+                    color: Colors.black54,
                   ),
                   child: const Text(
                     'Get Started',
                     style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF354854),
+                      color: Color(0xFFFFAA15),
                     ),
                   ),
                 ),

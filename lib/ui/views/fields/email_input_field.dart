@@ -70,7 +70,7 @@ class _EmailInputFieldState extends State<EmailInputField> {
       borderSide: !widget.withBorder
           ? BorderSide.none
           : BorderSide(
-              color: context.designs.colorRed,
+              color: Colors.red,
             ),
     );
 
