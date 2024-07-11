@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:food_delivery/ui/pages/auth/login_page.dart';
+import 'package:food_delivery/ui/pages/auth/auth_page.dart';
 
 class PreviewPage extends StatelessWidget {
   const PreviewPage({super.key});
@@ -41,7 +41,7 @@ class PreviewPage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
+                      builder: (context) => const AuthPage(),
                     ),
                   );
                 },

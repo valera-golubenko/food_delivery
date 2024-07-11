@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/ui/pages/auth/components/app_form_field.dart';
 import 'package:food_delivery/ui/views/buttons/app_button.dart';
@@ -9,6 +10,14 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
+
+    void signUserIn() async {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xFF354854),
       body: SafeArea(
@@ -45,7 +54,7 @@ class LoginPage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               AppButton(
-                onTap: () {},
+                onTap: signUserIn,
                 borderRadius: BorderRadius.circular(15),
                 child: Container(
                   width: double.infinity,
